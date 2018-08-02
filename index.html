@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>test</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="mocha"></div>
+
+  <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+    // mocha.checkLeaks();
+    mocha.setup('bdd');
+
+    describe('hook', () => {
+      before(() => {
+        console.log('before');
+      });
+      after(() => {
+        console.log('after');
+      });
+      beforeEach(() => {
+        console.log('beforeEach');
+      });
+      afterEach(() => {
+        console.log('afterEach');
+      });
+
+      it('啥都沒做', () => {
+        // test
+      });
+    });
+
+    mocha.run();
+  </script>
+</body>
+
+</html>

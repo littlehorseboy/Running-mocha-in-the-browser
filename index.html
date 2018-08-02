@@ -12,10 +12,12 @@
   <div id="mocha"></div>
 
   <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script type="text/babel">
-    // mocha.checkLeaks();
     mocha.setup('bdd');
+
+    var assert = chai.assert;
 
     describe('hook', () => {
       before(() => {
@@ -33,6 +35,12 @@
 
       it('啥都沒做', () => {
         // test
+      });
+    });
+
+    describe('assertTest', () => {
+      it('是不是相同', () => {
+        assert('foo' === 'bar', 'foo is not bar');
       });
     });
 

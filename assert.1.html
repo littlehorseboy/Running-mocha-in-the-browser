@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>test</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="mocha"></div>
+
+  <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+    mocha.setup('bdd');
+
+    const assert = chai.assert;
+
+    const mochaDiv = document.querySelector('#mocha');
+
+    describe('add', () => {
+      it('add 後是否包含 abc className', () => {
+        mochaDiv.classList.add('abc');
+        assert(mochaDiv.classList.contains('abc'), 'mochaDiv.classList.contains(\'abc\')');
+      });
+    });
+
+    describe('add', () => {
+      it('第二次 add 後是否包含 abc className', () => {
+        mochaDiv.classList.add('abc');
+        assert(mochaDiv.classList.contains('abc'), 'mochaDiv.classList.contains(\'abc\')');
+      });
+    });
+
+    describe('remove', () => {
+      it('remove 後是否包含 abc className', () => {
+        mochaDiv.classList.remove('abc');
+        assert(mochaDiv.classList.contains('abc'), 'mochaDiv.classList.contains(\'abc\')');
+      });
+    });
+
+    describe('toggle', () => {
+      it('toggle 後是否包含 className', () => {
+        mochaDiv.classList.toggle('abc');
+        assert(mochaDiv.classList.contains('abc'), 'mochaDiv.classList.contains(\'abc\')');
+      });
+    });
+
+    describe('toggle', () => {
+      it('toggle 後是否包含 className', () => {
+        mochaDiv.classList.toggle('abc');
+        assert(mochaDiv.classList.contains('abc'), 'mochaDiv.classList.contains(\'abc\')');
+      });
+    });
+
+    mocha.run();
+  </script>
+</body>
+
+</html>

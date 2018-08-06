@@ -17,30 +17,11 @@
   <script type="text/babel">
     mocha.setup('bdd');
 
-    var assert = chai.assert;
-
-    describe('hook', () => {
-      before(() => {
-        console.log('before');
-      });
-      after(() => {
-        console.log('after');
-      });
-      beforeEach(() => {
-        console.log('beforeEach');
-      });
-      afterEach(() => {
-        console.log('afterEach');
-      });
-
-      it('啥都沒做', () => {
-        // test
-      });
-    });
+    const expect = chai.expect;
 
     describe('assertTest', () => {
       it('是不是相同', () => {
-        assert('foo' === 'bar', 'foo is not bar');
+        expect(3).to.equal(2);
       });
     });
 
